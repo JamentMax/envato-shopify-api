@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   const tokenData = await tokenRes.json();
   const accessToken = tokenData.access_token;
-
+  console.log("Access Token:", accessToken);
   // 2. Ottieni lista video da Envato
   const query = req.query.q || "promo"; // parola chiave
   const videoRes = await fetch(`https://api.envato.com/v1/discovery/search/search/item?q=${query}&site=elements&category=video`, {
